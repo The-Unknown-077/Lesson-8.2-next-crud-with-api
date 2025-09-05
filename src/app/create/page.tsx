@@ -1,12 +1,14 @@
 import Form from '@/components/Form';
-import { memo } from 'react';
+import { memo, Suspense } from 'react';
 
 const Page = () => {
-  return (
-    <>
-        <Form />
-    </>
-  );
+    return (
+        <>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Form />
+            </Suspense>
+        </>
+    );
 };
 
 export default memo(Page);
